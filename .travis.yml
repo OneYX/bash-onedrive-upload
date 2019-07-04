@@ -1,0 +1,11 @@
+    
+language: minimal
+services:
+  - docker
+before_install:
+  - docker build -t oneyx/onedrive .
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
